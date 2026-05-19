@@ -1403,8 +1403,10 @@ export const connectorDetails = {
         Becs: { specName: ["connectorAgnosticNTID"], value: "connector_4" },
         Bacs: { specName: ["connectorAgnosticNTID"], value: "connector_3" },
       };
+      const skipPaymentMethods = ["Ach", "Bacs"];
       return {
         Configs: {
+          ...(skipPaymentMethods.includes(paymentMethodType) && { TRIGGER_SKIP: true }),
           CONNECTOR_CREDENTIAL: credentialMap[paymentMethodType] || {
             specName: ["connectorAgnosticNTID"],
             value: "connector_5",
@@ -1446,6 +1448,7 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
+          name: "Test Account",
           address: {
             country: "FR",
           },
@@ -1484,6 +1487,7 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
+          name: "Test Account",
           address: {
             country: "AU",
           },
@@ -1581,6 +1585,7 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
+          name: "Test Account",
           address: {
             country: "FR",
           },
@@ -1620,6 +1625,7 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
+          name: "Test Account",
           address: {
             country: "AU",
           },
