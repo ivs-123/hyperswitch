@@ -1398,17 +1398,16 @@ export const connectorDetails = {
     PaymentIntent: (paymentMethodType) => {
       const currencyMap = { Sepa: "EUR", Ach: "USD", Becs: "AUD", Bacs: "GBP" };
       const credentialMap = {
-        Sepa: { specName: ["connectorAgnosticNTID"], value: "connector_5" },
-        Ach: { specName: ["connectorAgnosticNTID"], value: "connector_1" },
-        Becs: { specName: ["connectorAgnosticNTID"], value: "connector_4" },
-        Bacs: { specName: ["connectorAgnosticNTID"], value: "connector_3" },
+        Sepa: { value: "connector_5" },
+        Ach: { value: "connector_1" },
+        Becs: { value: "connector_4" },
+        Bacs: { value: "connector_3" },
       };
       const skipPaymentMethods = ["Ach", "Bacs"];
       return {
         Configs: {
           ...(skipPaymentMethods.includes(paymentMethodType) && { TRIGGER_SKIP: true }),
           CONNECTOR_CREDENTIAL: credentialMap[paymentMethodType] || {
-            specName: ["connectorAgnosticNTID"],
             value: "connector_5",
           },
         },
@@ -1425,6 +1424,11 @@ export const connectorDetails = {
       };
     },
     Sepa: {
+      Configs: {
+        CONNECTOR_CREDENTIAL: {
+          value: "connector_5",
+        },
+      },
       Request: {
         payment_method: "bank_debit",
         payment_method_type: "sepa",
@@ -1448,8 +1452,9 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
-          name: "Test Account",
           address: {
+            first_name: "Test",
+            last_name: "Account",
             country: "FR",
           },
           email: "test@example.com",
@@ -1463,6 +1468,11 @@ export const connectorDetails = {
       },
     },
     Becs: {
+      Configs: {
+        CONNECTOR_CREDENTIAL: {
+          value: "connector_4",
+        },
+      },
       Request: {
         payment_method: "bank_debit",
         payment_method_type: "becs",
@@ -1487,9 +1497,12 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
-          name: "Test Account",
           address: {
+            first_name: "Test",
+            last_name: "Account",
             country: "AU",
+            line1: "123 Test St",
+            zip: "2000",
           },
           email: "test@example.com",
         },
@@ -1562,6 +1575,11 @@ export const connectorDetails = {
       },
     },
     MandateSingleUseSepa: {
+      Configs: {
+        CONNECTOR_CREDENTIAL: {
+          value: "connector_5",
+        },
+      },
       Request: {
         payment_method: "bank_debit",
         payment_method_type: "sepa",
@@ -1585,8 +1603,9 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
-          name: "Test Account",
           address: {
+            first_name: "Test",
+            last_name: "Account",
             country: "FR",
           },
           email: "test@example.com",
@@ -1601,6 +1620,11 @@ export const connectorDetails = {
       },
     },
     MandateSingleUseBecs: {
+      Configs: {
+        CONNECTOR_CREDENTIAL: {
+          value: "connector_4",
+        },
+      },
       Request: {
         payment_method: "bank_debit",
         payment_method_type: "becs",
@@ -1625,9 +1649,12 @@ export const connectorDetails = {
         setup_future_usage: "off_session",
         customer_acceptance: customerAcceptance,
         billing: {
-          name: "Test Account",
           address: {
+            first_name: "Test",
+            last_name: "Account",
             country: "AU",
+            line1: "123 Test St",
+            zip: "2000",
           },
           email: "test@example.com",
         },
@@ -1643,7 +1670,6 @@ export const connectorDetails = {
     MITAutoCapture: {
       Configs: {
         CONNECTOR_CREDENTIAL: {
-          specName: ["connectorAgnosticNTID"],
           value: "connector_5",
         },
       },
@@ -1660,7 +1686,6 @@ export const connectorDetails = {
     MITAutoCaptureBecs: {
       Configs: {
         CONNECTOR_CREDENTIAL: {
-          specName: ["connectorAgnosticNTID"],
           value: "connector_4",
         },
       },
