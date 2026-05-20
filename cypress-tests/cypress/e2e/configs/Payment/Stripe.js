@@ -1451,8 +1451,6 @@ export const connectorDetails = {
           },
         },
         customer_acceptance: customerAcceptance,
-        setup_future_usage: "off_session",
-        payment_type: "new_mandate",
         billing: {
           address: {
             first_name: "Test",
@@ -1497,8 +1495,6 @@ export const connectorDetails = {
           },
         },
         customer_acceptance: customerAcceptance,
-        setup_future_usage: "off_session",
-        payment_type: "new_mandate",
         billing: {
           address: {
             first_name: "Test",
