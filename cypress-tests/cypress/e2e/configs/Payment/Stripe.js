@@ -1443,7 +1443,6 @@ export const connectorDetails = {
             },
           },
         },
-        setup_future_usage: "off_session",
         billing: {
           address: {
             first_name: "Test",
@@ -1479,7 +1478,6 @@ export const connectorDetails = {
             },
           },
         },
-        setup_future_usage: "off_session",
         billing: {
           address: {
             first_name: "Test",
