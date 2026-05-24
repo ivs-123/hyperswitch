@@ -1427,7 +1427,7 @@ export const connectorDetails = {
     },
     Sepa: {
       Configs: {
-        TRIGGER_SKIP: true,
+        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_5",
         },
@@ -1437,11 +1437,21 @@ export const connectorDetails = {
         payment_method: "bank_debit",
         payment_method_type: "sepa",
         setup_future_usage: null,
+        customer_acceptance: customerAcceptance,
         payment_method_data: {
           bank_debit: {
             sepa_bank_debit: {
               iban: "DE89370400440532013000",
               bank_account_holder_name: "Test Account",
+            },
+          },
+        },
+        mandate_data: {
+          customer_acceptance: customerAcceptance,
+          mandate_type: {
+            single_use: {
+              amount: 1000,
+              currency: "EUR",
             },
           },
         },
@@ -1463,7 +1473,7 @@ export const connectorDetails = {
     },
     Becs: {
       Configs: {
-        TRIGGER_SKIP: true,
+        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_4",
         },
@@ -1473,12 +1483,22 @@ export const connectorDetails = {
         payment_method: "bank_debit",
         payment_method_type: "becs",
         setup_future_usage: null,
+        customer_acceptance: customerAcceptance,
         payment_method_data: {
           bank_debit: {
             becs_bank_debit: {
               bsb_number: "000000",
               account_number: "000123456",
               bank_account_holder_name: "Test Account",
+            },
+          },
+        },
+        mandate_data: {
+          customer_acceptance: customerAcceptance,
+          mandate_type: {
+            single_use: {
+              amount: 1000,
+              currency: "AUD",
             },
           },
         },
