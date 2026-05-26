@@ -1444,17 +1444,6 @@ export const connectorDetails = {
             },
           },
         },
-        mandate_data: {
-          customer_acceptance: customerAcceptance,
-          mandate_type: {
-            single_use: {
-              amount: 6500,
-              currency: "EUR",
-            },
-          },
-        },
-        setup_future_usage: "off_session",
-        customer_acceptance: customerAcceptance,
         billing: {
           address: {
             first_name: "Test",
@@ -1491,17 +1480,6 @@ export const connectorDetails = {
             },
           },
         },
-        mandate_data: {
-          customer_acceptance: customerAcceptance,
-          mandate_type: {
-            single_use: {
-              amount: 6500,
-              currency: "AUD",
-            },
-          },
-        },
-        setup_future_usage: "off_session",
-        customer_acceptance: customerAcceptance,
         billing: {
           address: {
             first_name: "Test",
