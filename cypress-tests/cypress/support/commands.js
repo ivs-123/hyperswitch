@@ -9385,7 +9385,6 @@ Cypress.Commands.add("retrieveNonExistentPaymentLinkTest", (globalState) => {
   });
 });
 
-
 Cypress.Commands.add(
   "updateBusinessProfileWithTaxConnector",
   (
