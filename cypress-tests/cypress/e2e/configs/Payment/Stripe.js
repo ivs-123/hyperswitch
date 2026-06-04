@@ -1449,6 +1449,14 @@ export const connectorDetails = {
             },
           },
         },
+        billing: {
+          address: {
+            first_name: "Test",
+            last_name: "Account",
+            country: "FR",
+          },
+          email: "test@example.com",
+        },
         mandate_data: {
           customer_acceptance: onlineCustomerAcceptance,
           mandate_type: {
@@ -1464,16 +1472,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
-        billing: {
-          address: {
-            first_name: "Test",
-            last_name: "Account",
-            country: "FR",
-          },
-          email: "test@example.com",
-        },
-        payment_type: "new_mandate",
       },
       Response: {
         status: 200,
@@ -1501,6 +1499,16 @@ export const connectorDetails = {
             },
           },
         },
+        billing: {
+          address: {
+            first_name: "Test",
+            last_name: "Account",
+            country: "AU",
+            line1: "123 Test St",
+            zip: "2000",
+          },
+          email: "test@example.com",
+        },
         mandate_data: {
           customer_acceptance: onlineCustomerAcceptance,
           mandate_type: {
@@ -1516,18 +1524,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
-        billing: {
-          address: {
-            first_name: "Test",
-            last_name: "Account",
-            country: "AU",
-            line1: "123 Test St",
-            zip: "2000",
-          },
-          email: "test@example.com",
-        },
-        payment_type: "new_mandate",
       },
       Response: {
         status: 200,
@@ -1567,8 +1563,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
-        payment_type: "new_mandate",
       },
       Response: {
         status: 200,
@@ -1644,7 +1638,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
         billing: {
           address: {
             country: "US",
@@ -1692,7 +1685,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
         billing: {
           address: {
             line1: "1 Oxford Street",
@@ -1744,7 +1736,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
         billing: {
           address: {
             first_name: "Test",
@@ -1796,7 +1787,6 @@ export const connectorDetails = {
           },
         },
         setup_future_usage: "off_session",
-        customer_acceptance: onlineCustomerAcceptance,
         billing: {
           address: {
             first_name: "Test",
