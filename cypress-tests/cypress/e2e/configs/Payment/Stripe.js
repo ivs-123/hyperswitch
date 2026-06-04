@@ -1418,6 +1418,7 @@ export const connectorDetails = {
           CONNECTOR_CREDENTIAL: credentialMap[paymentMethodType] || {
             value: "connector_5",
           },
+          ...(paymentMethodType === "Bacs" ? { TRIGGER_SKIP: true } : {}),
         },
         Request: {
           currency: currencyMap[paymentMethodType] || "USD",
@@ -1572,7 +1573,7 @@ export const connectorDetails = {
       Response: {
         status: 200,
         body: {
-          status: "processing",
+          status: "requires_customer_action",
         },
       },
     },
@@ -1605,6 +1606,7 @@ export const connectorDetails = {
           },
           email: "test@example.com",
         },
+        setup_future_usage: "off_session",
       },
       Response: {
         status: 200,
@@ -1656,12 +1658,13 @@ export const connectorDetails = {
       Response: {
         status: 200,
         body: {
-          status: "processing",
+          status: "requires_customer_action",
         },
       },
     },
     MandateSingleUseBacs: {
       Configs: {
+        TRIGGER_SKIP: true,
         CONNECTOR_CREDENTIAL: {
           value: "connector_3",
         },
@@ -1705,14 +1708,11 @@ export const connectorDetails = {
       },
       Response: {
         status: 200,
-        body: {
-          status: "processing",
-        },
+        body: {},
       },
     },
     MandateSingleUseSepa: {
       Configs: {
-        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_5",
         },
@@ -1764,7 +1764,6 @@ export const connectorDetails = {
     },
     MandateSingleUseBecs: {
       Configs: {
-        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_4",
         },
@@ -1819,7 +1818,6 @@ export const connectorDetails = {
     },
     MITAutoCaptureSepa: {
       Configs: {
-        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_5",
         },
@@ -1838,7 +1836,6 @@ export const connectorDetails = {
     },
     MITAutoCaptureBecs: {
       Configs: {
-        TRIGGER_SKIP: false,
         CONNECTOR_CREDENTIAL: {
           value: "connector_4",
         },
