@@ -59,6 +59,7 @@ export default defineConfig({
           }
 
           const logs = [];
+          // eslint-disable-next-line no-console
           const log = (msg) => { console.log(msg); logs.push(msg); };
 
           const stripeRequest = (method, path, postData) =>
@@ -82,7 +83,7 @@ export default defineConfig({
                 res.on("data", (chunk) => { data += chunk; });
                 res.on("end", () => {
                   try { resolve({ status: res.statusCode, body: JSON.parse(data) }); }
-                  catch (_e) { resolve({ status: res.statusCode, body: data }); }
+                  catch { resolve({ status: res.statusCode, body: data }); }
                 });
               });
               req.on("error", reject);
@@ -90,7 +91,7 @@ export default defineConfig({
               req.end();
             });
 
-          log(`[stripeVerify] Using connectorId=${connectorId} apiKeyPrefix=${apiKey.slice(0,12)}...`);
+          log(`[stripeVerify] Using connectorId=${connectorId}`);
 
           // GET the PaymentIntent to extract the hosted_verification_url for microdeposit
           return stripeRequest("GET", `/v1/payment_intents/${paymentIntentId}`, null)
