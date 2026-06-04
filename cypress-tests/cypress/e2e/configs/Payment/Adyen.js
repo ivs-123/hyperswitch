@@ -2582,6 +2582,7 @@ export const connectorDetails = {
       Request: {
         payment_method: "bank_debit",
         payment_method_type: "sepa",
+        currency: "EUR",
         payment_method_data: {
           bank_debit: {
             sepa_bank_debit: {
@@ -2619,7 +2620,7 @@ export const connectorDetails = {
       Response: {
         status: 200,
         body: {
-          status: "processing",
+          status: "succeeded",
         },
       },
     },
@@ -2839,6 +2840,9 @@ export const connectorDetails = {
       },
     },
     MITAutoCaptureBacs: {
+      Configs: {
+        TRIGGER_SKIP: true,
+      },
       Request: {
         off_session: true,
         confirm: true,

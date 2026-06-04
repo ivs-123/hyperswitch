@@ -1638,7 +1638,7 @@ export const connectorDetails = {
           customer_acceptance: onlineCustomerAcceptance,
           mandate_type: {
             multi_use: {
-              amount: 1000,
+              amount: 8000,
               currency: "USD",
             },
           },
@@ -1733,7 +1733,7 @@ export const connectorDetails = {
           customer_acceptance: onlineCustomerAcceptance,
           mandate_type: {
             multi_use: {
-              amount: 1000,
+              amount: 8000,
               currency: "EUR",
               start_date: "2023-04-21T00:00:00Z",
               end_date: "2023-05-21T00:00:00Z",
@@ -1785,7 +1785,7 @@ export const connectorDetails = {
           customer_acceptance: onlineCustomerAcceptance,
           mandate_type: {
             multi_use: {
-              amount: 1000,
+              amount: 8000,
               currency: "AUD",
               start_date: "2023-04-21T00:00:00Z",
               end_date: "2023-05-21T00:00:00Z",
