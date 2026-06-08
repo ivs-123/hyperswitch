@@ -50,12 +50,3 @@ option_map_unit_fn = "allow"
 strip = true
 lto = true
 codegen-units = 1
-
-# LOCAL OVERRIDE (do not upstream): point the unified-connector-service gRPC
-# client at prism's local sdk/rust-grpc-client so HS compiles against the proto
-# that already defines Customer.customer_document_details / CustomerDocumentDetails
-# / DocumentKind. The local rust-grpc-client re-exports the local grpc-api-types
-# crate (path dep), which carries the new field. The source URL must match the
-# git dependency declared in crates/{router,external_services,hyperswitch_interfaces}.
-[patch."https://github.com/juspay/connector-service"]
-rust-grpc-client = { path = "../sdk/rust-grpc-client" }

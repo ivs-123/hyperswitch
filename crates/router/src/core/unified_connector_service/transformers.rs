@@ -201,6 +201,10 @@ impl
                 phone_country_code: None,
                 customer_document_details: to_grpc_customer_document_details(router_data),
             }),
+            state: router_data
+                .access_token
+                .as_ref()
+                .map(ConnectorState::foreign_from),
         })
     }
 }
@@ -1991,6 +1995,7 @@ impl
                 .transpose()?
                 .map(|currency| currency.into()),
             l2_l3_data: None,
+            customer_document_details: to_grpc_customer_document_details(router_data),
             customer: Some(payments_grpc::Customer {
                 name: router_data
                     .request
