@@ -5066,7 +5066,7 @@ Cypress.Commands.add(
       "three_ds",
       { redirectionUrl, expectedUrl },
       connectorId,
-      null
+      globalState.get("paymentMethodType")
     );
   }
 );
