@@ -103,6 +103,11 @@ fn to_grpc_customer_document_details<F, Req, Res>(
                 common_types::customers::DocumentKind::Cnpj => {
                     payments_grpc::DocumentKind::Cnpj as i32
                 }
+                // Non-Brazilian document (e.g. Philippine PSN): prism ignores the type
+                // and only forwards document_number, so map to the proto default.
+                common_types::customers::DocumentKind::Other => {
+                    payments_grpc::DocumentKind::Unspecified as i32
+                }
             };
             payments_grpc::CustomerDocumentDetails {
                 document_type,
